@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "ponto.h"
+#include "./Ponto.h"
 
     //Exemplo  de TAD: Um ponto definido por suas coordenadas X e Y;
 struct ponto
