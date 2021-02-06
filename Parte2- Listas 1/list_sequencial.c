@@ -110,3 +110,43 @@ int insere_lista_inicio(Lista* li, struct aluno al)
 
     return 1;
 }
+
+int insere_lista_ordenada(Lista* li, struct aluno al)
+{
+       printf("\n\tVerificando Lista\n");
+
+    if(li == NULL){
+
+     printf("\n\tErro: Li == NULL\n"); 
+     return 0;
+    }
+        
+    if(list_cheia(li)){
+
+    printf("\n\tErro: list_cheia(li)\n"); 
+         return 0;
+
+    } 
+    
+    printf("\n\t Tudo Ok com a Lista !!!\n");
+    printf("\n\t Inserindo No elemento Ordenado de forma Menor para o maior(A matricula que decide qual é maior ou menor) !!!\n");
+
+    int k, i = 0;
+    while(i < li->qtd && li->dados[i].matricula < al.matricula)
+    {
+        i++;
+    }
+    printf("\n\tWhile Do!\n\t");
+    for(k = li->qtd - 1; k >= i; k--)
+    {
+        li->dados[k + 1] = li->dados[k];
+    }
+    printf("\n\tfor Do!\n\t");
+
+    li->dados[i] = al;
+    printf("\n\tInserindo");
+    li->qtd++;
+    printf("\n\tqtd = %d\n", li->qtd);
+
+    return 1;
+}
