@@ -11,13 +11,13 @@ struct  lista
 
 };
 
-
-
 Lista* cria_lista()
 {
     Lista * li;
     li = (Lista*) malloc(sizeof(struct lista));
-    if(li != NULL) li -> qtd = 0;
+    if(li != NULL) {
+        li -> qtd = 0;
+    }
     return li;
 }
 int tamanho_lista(Lista* li){
@@ -47,32 +47,31 @@ int lista_vazia(Lista* li)
 
 int insere_lista_final(Lista* li, struct aluno al)
 {
-    int i = 1;
-    printf("\n\tDentro Insere_lista_final\n");
+    
+    printf("\n\tVerificando Lista\n");
 
     if(li == NULL){
 
-     printf("Erro: Li == NULL "); 
+     printf("\n\tErro: Li == NULL\n"); 
      return 0;
     }
         
     
     if(list_cheia(li)){
 
-    printf("Erro: list_cheia(li) "); 
+    printf("\n\tErro: list_cheia(li)\n"); 
          return 0;
 
     } 
-    if(i == 1)
-    {
-     printf("1 == 1 \n");
-    }
-    printf("\nPassou dos if ");
 
-    li -> dados[li -> qtd] = al;
-    printf("Inserindo Li->dados");
-    li -> qtd++;
-    printf("  li->qtd++;");
+    printf("\n\tTudo Ok com a Lista !!!\n");
+
+    li->dados[li->qtd] = al;
+    printf("\n\tInserindo");
+    li->qtd++;
+    printf("\n\tqtd = %d\n", li->qtd);
 
     return 1;
 }
+
+
