@@ -1,6 +1,7 @@
 #include "list_sequencial.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct  lista
 {
@@ -103,7 +104,7 @@ int insere_lista_inicio(Lista* li, struct aluno al)
         li->dados[i+1] = li ->dados[i];
     }
 
-    li->dados[0];
+    li->dados[0] = al;
     printf("\n\tInserindo");
     li->qtd++;
     printf("\n\tqtd = %d\n", li->qtd);
@@ -113,7 +114,7 @@ int insere_lista_inicio(Lista* li, struct aluno al)
 
 int insere_lista_ordenada(Lista* li, struct aluno al)
 {
-       printf("\n\tVerificando Lista\n");
+    printf("\n\tVerificando Lista\n");
 
     if(li == NULL){
 
@@ -149,4 +150,42 @@ int insere_lista_ordenada(Lista* li, struct aluno al)
     printf("\n\tqtd = %d\n", li->qtd);
 
     return 1;
+}
+
+void mostrar_lista(Lista* li, int al_qtd)
+{
+    printf("\n\tVerificando Lista\n");
+
+    if(li == NULL){
+     printf("\n\tErro: Li == NULL\n"); 
+    }
+        
+    if(list_cheia(li)){
+
+    printf("\n\tErro: list_cheia(li)\n"); 
+    } 
+    
+    printf("\n\t Tudo Ok com a Lista !!!\n");
+    printf("\n\t Lista -> Mostrando elemento: %d\n", al_qtd);
+
+
+    printf("\n\t\tMatricula: %d\n", li->dados[al_qtd].matricula);
+
+    int lenDadosNome = strlen(li->dados[al_qtd].nome);
+    printf("\n\tNome: ");
+    for(int map = 0; map <= lenDadosNome; map++)
+    {    
+    printf("%c", li->dados[al_qtd].nome[map]);
+    }
+    
+    printf("\n");
+
+    printf("\n\tNota 1: %f \n", li->dados[al_qtd].n1);
+    printf("\n\tNota 2: %f \n", li->dados[al_qtd].n2);
+    printf("\n\tNota 3: %f \n", li->dados[al_qtd].n3);
+    printf("\n\tNota 4: %f \n", li->dados[al_qtd].n4);
+    printf("\n\t........");
+    printf("\n");
+
+
 }
