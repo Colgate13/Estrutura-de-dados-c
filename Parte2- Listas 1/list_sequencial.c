@@ -164,6 +164,13 @@ void mostrar_lista(Lista* li, int al_qtd)
 
     printf("\n\tErro: list_cheia(li)\n"); 
     } 
+
+    if(al_qtd > li->qtd)
+    {
+        printf("\n\tQtd passado é muito alto, não tem elementos nessas posições\n");
+        printf("\n\tCuidado com o lixo de memoria BB\n");
+    }else{
+
     
     printf("\n\t Tudo Ok com a Lista !!!\n");
     printf("\n\t Lista -> Mostrando elemento: %d\n", al_qtd);
@@ -188,4 +195,98 @@ void mostrar_lista(Lista* li, int al_qtd)
     printf("\n");
 
 
+    }
+}
+void mostrar_qtd(Lista* li)
+{
+    printf("Qtd => %d",li->qtd);
+}
+
+
+int remove_lista_final(Lista* li)
+{
+    printf("\n\tVerificando Lista\n");
+
+    if(li == NULL){
+     printf("\n\tErro: Li == NULL\n"); 
+    }
+        
+    if(list_cheia(li)){
+
+    printf("\n\tErro: list_cheia(li)\n"); 
+    } 
+    
+    printf("\n\t Tudo Ok com a Lista !!!\n");
+    printf("\n\t Vamos remover o ultimo elemento adc na lista !!!\n");
+
+    li->qtd--;
+
+    return 1;
+
+}
+
+int remove_lista_inicio(Lista* li)
+{
+    printf("\n\tVerificando Lista\n");
+
+    if(li == NULL){
+     printf("\n\tErro: Li == NULL\n"); 
+    }
+        
+    if(list_cheia(li)){
+
+    printf("\n\tErro: list_cheia(li)\n"); 
+    } 
+    
+    printf("\n\t Tudo Ok com a Lista !!!\n");
+    printf("\n\t Vamos remover o Primeiro elemento adc na lista !!!\n");
+
+    int k = 0;
+    for(k = 0; k < li->qtd - 1; k++)
+    {
+        li->dados[k] = li->dados[k + 1];
+    }
+    li->qtd--;
+    return 1;
+}
+
+int remove_lista_pela_matricula(Lista* li, int matricula)
+{
+     printf("\n\tVerificando Lista\n");
+
+    if(li == NULL){
+     printf("\n\tErro: Li == NULL\n"); 
+    }
+        
+    if(list_cheia(li)){
+
+    printf("\n\tErro: list_cheia(li)\n"); 
+    } 
+    
+    printf("\n\t Tudo Ok com a Lista !!!\n");
+    printf("\n\t Vamos remover o que tem essa matricula!!!\n");
+
+    int k,i = 0;
+    while (i < li->qtd && li->dados[i].matricula != matricula)
+    {
+        i++;
+    }
+
+    if(i == li->qtd)
+    {
+        printf("I = %d\n", i);
+        printf("li->qtd %d\n", li->qtd);
+
+        printf("i == li->qtd POH\n");
+        return 0;
+    }
+
+    for(k = 1; k < li->qtd - 1; k++)
+    {
+        li->dados[k] = li->dados[k + 1];
+    }
+
+    li->qtd--;
+    return 1;
+    
 }
