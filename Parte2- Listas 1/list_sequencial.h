@@ -44,4 +44,7 @@ int remove_lista_pela_matricula(Lista* li, int matricula);
 
 int consulta_lista_posisao(Lista *li, int pos, struct aluno *al);
 
+int consulta_lista_matricula(Lista *li, int mat, struct aluno *al);
+
+
 #endif 

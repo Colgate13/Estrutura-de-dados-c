@@ -115,6 +115,9 @@ int main(){
             printf("\n Aluno al_1 -> n4: ");
             scanf("%f",  &al_1.n4);
 */
+ struct aluno al1;//Usando nas consultas
+ struct aluno al2;//Usando nas consultas
+
  struct aluno al_1;
 
 al_1.matricula = 1;
@@ -126,7 +129,7 @@ al_1.n4 = 10;
 
  struct aluno al_2;
 
-al_2.matricula = 2;
+al_2.matricula = 20;
 al_2.nome[0] = 'b';
 al_2.n1 = 10;
 al_2.n2 = 10;
@@ -215,6 +218,15 @@ al_4.n4 = 10;
     printf("Mostrar Lista, qtd: 2\n");
     mostrar_lista(li,3);
 
+//CONSULTAS
+    int constu_pos = consulta_lista_posisao(li, 1, &al1);
+    printf("\nMatricula da  posicao 1: %d \n", al1.matricula);
+
+
+    int constu_mat = consulta_lista_matricula(li, 4, &al2);
+    printf("Se deu certo 1: %d", constu_mat);
+    printf("\nMatricula Buscando a matricula 20: %d ", al2.matricula);
+
     remove_lista_pela_matricula(li, 3);
     mostrar_qtd(li);
 
@@ -224,8 +236,9 @@ al_4.n4 = 10;
     remove_lista_inicio(li);
     mostrar_qtd(li);
 
-    int constu_pos = consulta_lista_posisao(li, 1, &al_1);
-    printf("%d", constu_pos);
+
+
+    
 
     return 0;
 

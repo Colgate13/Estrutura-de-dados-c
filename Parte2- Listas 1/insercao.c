@@ -8,6 +8,7 @@ int main(){
     li = cria_lista();
 
     struct aluno al;
+    struct aluno al2;
 
     struct aluno al_1;
 
@@ -119,6 +120,12 @@ al_4.n4 = 10;
     int constu_pos4 = consulta_lista_posisao(li, 4, &al);
     printf(" Se deu certo = 1:  %d ", constu_pos4);
     printf("al.matricula => %d \n", al.matricula);
+
+
+    int constu_mat = consulta_lista_matricula(li, 10, &al2);
+    printf(" \nSe deu certo = 1:  %d ", constu_mat);
+    printf("al.matricula => %d \n", al2.matricula);
+
 
 
     return 0;

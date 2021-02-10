@@ -297,3 +297,20 @@ int consulta_lista_posisao(Lista *li, int pos, struct aluno *al)
     *al = li->dados[pos - 1];
     return 1;
 }
+int consulta_lista_matricula(Lista *li, int mat, struct aluno *al)
+{
+    if(li == NULL) {
+        printf("\n\tLi == null:\n"); 
+        return 0;
+    }
+    int k,i = 0;
+    while (i < li->qtd && li->dados[i].matricula != mat)
+    {
+            i++;
+    }
+    if(i == li->qtd) {
+        printf("\n\tLi == li->qtd:"); return 0;
+    }
+    *al = li->dados[i];
+    return 1;    
+}
