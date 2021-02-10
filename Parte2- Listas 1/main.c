@@ -26,6 +26,8 @@ int main(){
     if(lista_vazia(li)){
         printf("\nLista vazia!!!\n");
     }
+
+
 //}
 //So para facilitar a leitura enquanto programo
 //{//Chave Declarando sctruct aluno al_1, al_2, al_3
@@ -222,6 +224,8 @@ al_4.n4 = 10;
     remove_lista_inicio(li);
     mostrar_qtd(li);
 
+    int constu_pos = consulta_lista_posisao(li, 1, &al_1);
+    printf("%d", constu_pos);
 
     return 0;
 

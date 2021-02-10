@@ -290,3 +290,10 @@ int remove_lista_pela_matricula(Lista* li, int matricula)
     return 1;
     
 }
+int consulta_lista_posisao(Lista *li, int pos, struct aluno *al)
+{
+    if(li == NULL || pos <= 0 || pos > li->qtd) return 0;
+
+    *al = li->dados[pos - 1];
+    return 1;
+}

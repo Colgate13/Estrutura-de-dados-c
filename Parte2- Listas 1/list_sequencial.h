@@ -1,4 +1,4 @@
- #ifndef LISTSEQ
+#ifndef LISTSEQ
 #define LISTSEQ
 
 #define MAX 100//tamanho da lista
@@ -39,5 +39,9 @@ int remove_lista_final(Lista* li);
 int remove_lista_inicio(Lista* li);
 
 int remove_lista_pela_matricula(Lista* li, int matricula);
+
+//Consulta
+
+int consulta_lista_posisao(Lista *li, int pos, struct aluno *al);
 
 #endif 
