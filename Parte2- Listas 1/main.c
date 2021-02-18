@@ -227,6 +227,8 @@ al_4.n4 = 10;
     printf("Se deu certo 1: %d", constu_mat);
     printf("\nMatricula Buscando a matricula 20: %d ", al2.matricula);
 
+
+//Removendo
     remove_lista_pela_matricula(li, 3);
     mostrar_qtd(li);
 
